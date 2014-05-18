@@ -2,8 +2,9 @@
 SICKBEARD="sickbeard"
 COUCHPOTATO="couchpotato"
 HEADPHONES="headphones"
+SAB="sabnzbd"
 
-echo Stopping docker containers
+echo Building docker containers
 
 echo Building couchpotato...
 docker build -t $COUCHPOTATO $(pwd)/$COUCHPOTATO
@@ -13,3 +14,6 @@ docker build -t $SICKBEARD $(pwd)/$SICKBEARD
 
 echo Building headphones
 docker build -t $HEADPHONES $(pwd)/$HEADPHONES
+
+echo Building sabnzbd
+docker build -t $SAB $(pwd)/$SAB
