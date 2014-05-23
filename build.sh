@@ -8,16 +8,16 @@ DELUGE="deluge"
 echo Building docker containers
 
 echo Building couchpotato...
-docker build -t $COUCHPOTATO $(pwd)/$COUCHPOTATO
+docker build --no-cache -t $COUCHPOTATO-image $(pwd)/$COUCHPOTATO
 
 echo Building sickbeard...
-docker build -t $SICKBEARD $(pwd)/$SICKBEARD
+docker build --no-cache -t $SICKBEARD-image $(pwd)/$SICKBEARD
 
 echo Building headphones...
-docker build -t $HEADPHONES $(pwd)/$HEADPHONES
+docker build --no-cache -t $HEADPHONES-image $(pwd)/$HEADPHONES
 
 echo Building sabnzbd...
-docker build -t $SAB $(pwd)/$SAB
+docker build --no-cache -t $SAB-image $(pwd)/$SAB
 
 echo Building deluge...
-docker build -t $DELUGE $(pwd)/$DELUGE
+docker build --no-cache -t $DELUGE-image $(pwd)/$DELUGE
