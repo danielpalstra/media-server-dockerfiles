@@ -6,6 +6,8 @@ You will need to modify the start.sh file to point to your data and storage dirs
 These are the directories on your host server that you want to expose to the docker containers.
 If you want to expose a nas drive you can mount it on your host server and expose it through one of these constants.
 
+This will give you a way to save state outside of the containers themselves, so that config and db files will persist. You can also setup a cronjob to backup these folders to the cloud incase of a drive failure.
+
 * DATADIR=(dir where all the config files and db files will be kept)
 * STORAGEDIR=(dir where all processed downloads will be saved)
 * TMPDIR=(dir where incomplete downloads will be saved)
