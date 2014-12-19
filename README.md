@@ -1,7 +1,7 @@
 # Media server docker containers
 This will install sickbeard, sabnzbd, couchpotato, deluge and headphones.
 
->WARNING: the clean.sh, stop.sh and update.sh scripts will remove all non running containers. If you want to change this functionality, edit the clean.sh script to only remove the media containers and images.
+>WARNING: the `clean.sh`, `stop.sh` and `update.sh` scripts will remove all non running containers. If you want to change this functionality, edit `the clean.sh` script to only remove the media containers and images.
 
 ## Data and Storage directories:
 You will need to modify the start.sh file to point to your data and storage dirs.
