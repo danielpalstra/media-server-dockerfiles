@@ -2,7 +2,9 @@
 This will install sickbeard, sabnzbd, couchpotato, deluge and headphones.
 
 ## Data and Storage directories:
-You will need to modify the start.sh file to point to your data and storage dirs:
+You will need to modify the start.sh file to point to your data and storage dirs.
+These are the directories on your host server that you want to expose to the docker containers.
+If you want to expose a nas drive you can mount it on your host server and expose it though one of these constants.
 
 * DATADIR=(dir where all the config files and db files will be kept)
 * STORAGEDIR=(dir where all processed downloads will be saved)
