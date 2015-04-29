@@ -1,5 +1,5 @@
 # Media server docker containers
-This will install sickbeard, sabnzbd, couchpotato, deluge and headphones.
+This will install sonarr, sabnzbd, couchpotato, deluge and headphones.
 
 >WARNING: the `clean.sh`, `stop.sh` and `update.sh` scripts will remove all non running containers and images. If you want to change this functionality, edit the `clean.sh` script to only remove the media containers and images.
 

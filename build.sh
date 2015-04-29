@@ -1,5 +1,4 @@
 #!/bin/bash
-SICKBEARD="sickbeard"
 COUCHPOTATO="couchpotato"
 HEADPHONES="headphones"
 SAB="sabnzbd"
@@ -9,9 +8,6 @@ echo Building docker containers
 
 echo Building couchpotato...
 docker build --no-cache -t $COUCHPOTATO-image $(pwd)/$COUCHPOTATO
-
-echo Building sickbeard...
-docker build --no-cache -t $SICKBEARD-image $(pwd)/$SICKBEARD
 
 echo Building headphones...
 docker build --no-cache -t $HEADPHONES-image $(pwd)/$HEADPHONES
