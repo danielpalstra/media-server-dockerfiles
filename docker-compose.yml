@@ -1,0 +1,74 @@
+data:
+  image: busybox
+  restart: always
+  volumes:
+    - /mnt/storage/tmp:/mnt/tmp:rw
+    - /mnt/storage/downloads:/mnt/downloads:rw
+    - /media/jeff/nas:/mnt/nas:rw
+    - /etc/localtime:/etc/localtime:ro
+
+sonarr:
+  image: tuxeh/sonarr
+  restart: always
+  expose: 
+    - "8989"
+  ports: 
+    - "8989:8989"
+  user: "root"
+  volumes:
+    - /mnt/storage/downloads:/volumes/completed:rw 
+    - /mnt/storage/dockerdata/sonarr:/volumes/config:rw
+    - /media/jeff/nas:/volumes/media:rw
+    - /etc/localtime:/etc/localtime:ro
+
+couchpotato:
+  build: couchpotato
+  restart: always
+  expose: 
+    - "5050"
+  ports: 
+    - "5050:5050"
+  volumes_from:
+    - data
+  volumes:
+    - /mnt/storage/dockerdata/couchpotato:/mnt/state:rw
+
+deluge:
+  build: deluge
+  restart: always
+  expose:
+    - "58846"
+    - "8112"
+    - "53160"
+    - "53160/udp"
+  ports:
+    - "58846:58846"
+    - "8112:8112"
+  volumes_from:
+    - data
+  volumes:
+    - /mnt/storage/dockerdata/deluge:/mnt/state:rw
+
+headphones:
+  build: headphones
+  restart: always
+  expose:
+    - "8181"
+  ports:
+    - "8181:8181"
+  volumes_from:
+    - data
+  volumes:
+    - /mnt/storage/dockerdata/headphones:/mnt/state:rw
+
+sabnzbd:
+  build: sabnzbd
+  restart: always
+  expose:
+    - "8080"
+  ports:
+    - "8080:8080"
+  volumes_from:
+    - data
+  volumes:
+    - /mnt/storage/dockerdata/sabnzbd:/mnt/state:rw

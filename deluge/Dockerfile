@@ -13,14 +13,4 @@ RUN apt-mark hold initscripts udev plymouth mountall
 RUN apt-get install -qy --force-yes deluged deluge-web
 ADD start.sh /start.sh
 
-VOLUME ["/mnt/state", "/mnt/tmp", "/mnt/downloads"]
-
-# Torrent port
-EXPOSE 53160
-EXPOSE 53160/udp
-# WebUI
-EXPOSE 8112
-# Daemon
-EXPOSE 58846
-
 CMD ["/start.sh"]

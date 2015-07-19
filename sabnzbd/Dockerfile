@@ -13,8 +13,4 @@ RUN apt-mark hold initscripts udev plymouth mountall
 
 RUN apt-get install -qy --force-yes sabnzbdplus sabnzbdplus-theme-classic sabnzbdplus-theme-mobile sabnzbdplus-theme-plush par2 python-yenc unrar unzip 
 
-VOLUME ["/mnt/state", "/mnt/nas", "/mnt/tmp", "/mnt/downloads"]
-
-EXPOSE 8080
-
 ENTRYPOINT ["/usr/bin/sabnzbdplus", "-b", "0", "-f", "/mnt/state/sabnzbd.ini", "--server", ":8080"]
