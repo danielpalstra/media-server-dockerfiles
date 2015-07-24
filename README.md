@@ -12,6 +12,8 @@ This will give you a way to save state outside of the containers themselves, so 
 * /media/jeff/storage/tmp=(dir where incomplete downloads will be saved)
 * /media/jeff/storage/downloads=(dir where unprocessed downloads will be saved)
 
+> Sickbeard is included but not used, I use sonarr instead but if you want to use sickbeard just modify the docker-compose.yml to build that image instead.
+
 To build and run:
 
 `sudo docker-compose up -D`
